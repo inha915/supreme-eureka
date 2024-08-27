@@ -1,0 +1,199 @@
+<template>
+  <div :class="['main-container']">
+    <!-- <div :class="['main-container', { 'full-width': !isPropertyPanelVisible }]"> -->
+    <ResizableContainer class="v-main" @resize="handleLayoutResize">
+      <template v-slot:left>
+        <MainContent
+          :isPropertyPanelVisible="isPropertyPanelVisible"
+          @toggle-property-panel="togglePropertyPanel"
+        />
+      </template>
+      <template v-slot:right>
+        <PropertyPanel
+          v-if="isPropertyPanelVisible"
+          @close-propertypanel="handlePanelClose"
+          :left-size="layoutSize.left"
+          :right-size="layoutSize.right"
+        />
+      </template>
+    </ResizableContainer>
+    <!-- Open 버튼 -->
+    <v-btn
+      v-if="!isPropertyPanelVisible"
+      class="open-btn"
+      icon
+      @click="openPropertyPanel"
+    >
+      <v-icon>mdi-chevron-left</v-icon>
+    </v-btn>
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+import { EventBus } from "../event-bus.js";
+import MainContent from "@/views/MainContent.vue";
+import PropertyPanel from "@/views/PropertyPanel.vue";
+import ResizableContainer from "@/components/ResizableContainer.vue";
+
+export default {
+  name: "App",
+  components: {
+    MainContent,
+    PropertyPanel,
+    ResizableContainer,
+  },
+  data() {
+    return {
+      isPropertyPanelVisible: true,
+      layoutSize: {
+        left: 0,
+        right: 0,
+      },
+    };
+  },
+  methods: {
+    handlePanelClose() {
+      this.isPropertyPanelVisible = false;
+    },
+
+    togglePropertyPanel() {
+      this.isPropertyPanelVisible = !this.isPropertyPanelVisible;
+    },
+
+    openPropertyPanel() {
+      window.VuetResizerRefresh(false);
+      this.isPropertyPanelVisible = true;
+    },
+
+    async checkHealth() {
+      try {
+        const response = await axios.get("/api/test/data");
+        console.log("Server health:", response.data);
+      } catch (error) {
+        console.error("There was an error checking the server health:", error);
+      }
+    },
+    handleLayoutResize(size) {
+      this.layoutSize = size;
+    },
+  },
+  sockets: {
+    onopen() {
+      console.log("WebSocket connection established.");
+
+      const message = {
+        type: "connect",
+        message: "hello, stni!",
+      };
+      this.$socket.send(JSON.stringify(message));
+    },
+    onclose() {
+      console.log("WebSocket connection closed.");
+    },
+    onerror() {
+      console.error("WebSocket error occurred.");
+    },
+    onmessage(event) {
+      console.log("WebSocket message received:", event);
+
+      try {
+        const data = JSON.parse(event.data);
+
+        // 데이터 전파
+        EventBus.$emit("on-data", data);
+      } catch (e) {
+        console.error("onmessage", e);
+      }
+    },
+  },
+  created() {
+    console.log(process.env.VUE_APP_URL);
+    // 컴포넌트가 마운트될 때 서버 상태를 확인
+    this.checkHealth();
+  },
+};
+</script>
+
+<style>
+.v-main {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 100%;
+}
+
+/* 탭바 스타일 조정 */
+.tab-bar {
+  width: 100%; /* 전체 너비를 차지하도록 설정 */
+  height: 50px; /* 필요한 높이로 설정 */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; /* 아이템 사이의 간격을 균등하게 설정 */
+  padding: 0; /* 좌우 패딩 추가 */
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  margin: 0;
+}
+
+.tab-bar > * {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.main-container.full-width .left {
+  width: 100%;
+}
+
+.main-container.full-width .right {
+  display: none;
+}
+
+.left {
+  /* flex: 1;
+  overflow-y: auto; 세로 스크롤 허용 */
+  height: 100%;
+}
+
+.right {
+  width: 300px; /* 레이아웃에 맞게 너비 조정 */
+  overflow-y: auto; /* 세로 스크롤 허용 */
+}
+
+.open-btn {
+  position: absolute;
+  top: 2%;
+  left: calc(100% - 35px);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.divider {
+  border: 0;
+  border-top: 1px solid #646262; /* 구분선 색상 및 두께 조정 */
+  margin: 16px 0; /* 구분선 위아래 여백 조정 */
+}
+</style>
