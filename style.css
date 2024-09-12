@@ -1,0 +1,8 @@
+#text강조를 위한 font-weight-bold를 적용시킬 때에 세부적으로 두께를 적용시킬 수 있다.
+
+font-weight: 100;: 매우 얇은 글씨
+font-weight: 300;: 얇은 글씨
+font-weight: 400;: 기본 글씨 (normal)
+font-weight: 500;: 중간 굵기
+font-weight: 700;: 굵은 글씨 (bold)
+font-weight: 900;: 매우 굵은 글씨
