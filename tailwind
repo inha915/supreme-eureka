@@ -1,4 +1,4 @@
-#tailwind vue2에서 설치하는 명령어
+#tailwind를 vue2에서 호환성 문제 없이 구축하는 명령어
 
 #postcss8 이 지원되지 않기때문에 7 호환으로 설치
 npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
