@@ -1,0 +1,52 @@
+#tailwind vue2에서 설치하는 명령어
+
+#postcss8 이 지원되지 않기때문에 7 호환으로 설치
+npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
+
+# tailwindcss 초기화
+npx tailwindcss init
+
+#아래 파일이 생성됨
+/tailwind.config.js
+
+/postcss.config.js
+
+-----------------------------------------------------------
+내부 코드 수정, 변경 사항 
+#postcss.config.js
+
+[code]
+
+const autoprefixer = require(‘autoprefixer’)
+
+const tailwindcss = require(‘tailwindcss’)
+
+module.exports = {
+
+  plugins: [tailwindcss, autoprefixer],
+
+}
+
+[/code]
+
+----------------------------------------------
+assets/scss/tailwindcss.scss
+
+[code]
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+[/code]
+
+------------------------------------------------
+ main.js 에 import 한다
+
+[code]
+
+import ‘./assets/scss/tailwind.init.scss’
+
+[/code]
