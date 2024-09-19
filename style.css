@@ -6,3 +6,38 @@ font-weight: 400;: 기본 글씨 (normal)
 font-weight: 500;: 중간 굵기
 font-weight: 700;: 굵은 글씨 (bold)
 font-weight: 900;: 매우 굵은 글씨
+
+
+#card의 background-color를 dark-mode, light-mode 두가지 경우에 따라 바뀌도록 설정하기
+    <v-card
+              class="mx-auto"
+              :style="{
+                border: '2px solid #d74b4b',
+                maxWidth: '344px',
+                height: '187px',
+                backgroundColor: $vuetify.theme.dark
+                  ? '#042b4d'
+                  : '#c9d7e3' /* 다크 모드일 때 배경색 */,
+                color: $vuetify.theme.dark
+                  ? '#ffffff'
+                  : '#000000' /* 라이트 모드일 때 텍스트 색상 */,
+              }"
+            >
+              <v-card-text>
+                <p class="small-text">
+                  (안전센서) 상태에 따라 색상구분 표시<br />
+                  OFF : 회색, 경고 : 황색, 위험 : 적색 <br />
+                </p>
+                <div class="top-padding">
+                  <p class="small-text">
+                    (범퍼, 비상정지, 툴)ON/OFF상태에 따라 색상표시<br />
+                  </p>
+                </div>
+                <div class="top-padding">
+                  <p class="small-text">
+                    (도막측정값) 표와 같이 배열, 측정번호에 해당하는 셀에 값
+                    표시
+                  </p>
+                </div>
+              </v-card-text>
+            </v-card>
