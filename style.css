@@ -41,3 +41,17 @@ font-weight: 900;: 매우 굵은 글씨
                 </div>
               </v-card-text>
             </v-card>
+
+
+#반원통모양의 버튼 만드는 방법
+<template>
+  <button class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600">
+    버튼
+  </button>
+</template>
+
+<style scoped>
+/* Tailwind CSS를 사용하면, 추가적인 스타일링이 필요하지 않을 수 있지만
+   필요에 따라 scoped 스타일을 추가할 수 있다. */
+</style>
+
