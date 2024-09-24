@@ -60,3 +60,128 @@ module.exports = {
 import ‘./assets/scss/tailwind.init.scss’
 
 [/code]
+
+-------------------------------------------------
+end
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#tailwind.css를 활용하여 vue에서 3X3 grid 만들기
+
+[code]
+
+<template>
+  <div class="p-6 grid grid-cols-3 gap-4">
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <img
+        class="w-full h-32 object-cover"
+        src="https://via.placeholder.com/150"
+        alt="Card Image 1"
+      />
+      <div class="p-4">
+        <h2 class="text-lg font-bold mb-2">Card Title 1</h2>
+        <p class="text-gray-600">Description for card 1</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <img
+        class="w-full h-32 object-cover"
+        src="https://via.placeholder.com/150"
+        alt="Card Image 2"
+      />
+      <div class="p-4">
+        <h2 class="text-lg font-bold mb-2">Card Title 2</h2>
+        <p class="text-gray-600">Description for card 2</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <img
+        class="w-full h-32 object-cover"
+        src="https://via.placeholder.com/150"
+        alt="Card Image 3"
+      />
+      <div class="p-4">
+        <h2 class="text-lg font-bold mb-2">Card Title 3</h2>
+        <p class="text-gray-600">Description for card 3</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <img
+        class="w-full h-32 object-cover"
+        src="https://via.placeholder.com/150"
+        alt="Card Image 4"
+      />
+      <div class="p-4">
+        <h2 class="text-lg font-bold mb-2">Card Title 4</h2>
+        <p class="text-gray-600">Description for card 4</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <img
+        class="w-full h-32 object-cover"
+        src="https://via.placeholder.com/150"
+        alt="Card Image 5"
+      />
+      <div class="p-4">
+        <h2 class="text-lg font-bold mb-2">Card Title 5</h2>
+        <p class="text-gray-600">Description for card 5</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <img
+        class="w-full h-32 object-cover"
+        src="https://via.placeholder.com/150"
+        alt="Card Image 6"
+      />
+      <div class="p-4">
+        <h2 class="text-lg font-bold mb-2">Card Title 6</h2>
+        <p class="text-gray-600">Description for card 6</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <img
+        class="w-full h-32 object-cover"
+        src="https://via.placeholder.com/150"
+        alt="Card Image 7"
+      />
+      <div class="p-4">
+        <h2 class="text-lg font-bold mb-2">Card Title 7</h2>
+        <p class="text-gray-600">Description for card 7</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <img
+        class="w-full h-32 object-cover"
+        src="https://via.placeholder.com/150"
+        alt="Card Image 8"
+      />
+      <div class="p-4">
+        <h2 class="text-lg font-bold mb-2">Card Title 8</h2>
+        <p class="text-gray-600">Description for card 8</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <img
+        class="w-full h-32 object-cover"
+        src="https://via.placeholder.com/150"
+        alt="Card Image 9"
+      />
+      <div class="p-4">
+        <h2 class="text-lg font-bold mb-2">Card Title 9</h2>
+        <p class="text-gray-600">Description for card 9</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+
+[/code]
+
