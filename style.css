@@ -55,3 +55,29 @@ font-weight: 900;: 매우 굵은 글씨
    필요에 따라 scoped 스타일을 추가할 수 있다. */
 </style>
 
+#그림자 효과
+/* 기본적인 그림자 효과 */
+.box-shadow-basic {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* x축, y축, 블러, 그림자 색상 */
+}
+
+/* 부드러운 그림자 */
+.box-shadow-soft {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* 강한 그림자 */
+.box-shadow-strong {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 여러 단계의 그림자 */
+.box-shadow-multi {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 그림자 + 색상 */
+.box-shadow-colored {
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2); /* 빨간색 그림자 */
+}
+
