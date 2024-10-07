@@ -185,3 +185,107 @@ end
 
 [/code]
 
+-------------------------------------------------------------------
+#css 사용
+
+text-3xl: 글자 크기를 크게 설정 (약 30px)
+font-bold: 글자 굵기를 굵게 설정 (font-weight: 700)
+text-blue-500: 텍스트 색상을 중간 강도의 파란색으로 설정
+mt-4: 요소의 상단 여백을 1rem(16px)으로 설정
+text-gray-700: 텍스트 색상을 중간 강도의 회색으로 설정
+underline: 밑줄을 추가
+--------------------------------------------------------------------
+#Tailwind CSS를 사용할 때 빈번히 쓰이는 몇 가지의 코드
+
+1. Flexbox Layout@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+   Flexbox를 사용해 레이아웃을 쉽게 조정할 수 있다.
+
+[code]
+
+<div class="flex items-center justify-center h-screen">
+  <div class="bg-blue-500 text-white p-6 rounded-lg shadow-lg">
+    Flexbox Centered Content
+  </div>
+</div>
+
+[/code]
+
+    *flex: Flexbox 레이아웃 사용
+    *items-center: 수직 정렬
+    *justify-center: 수평 정렬
+    *h-screen: 화면의 높이를 100%로 설정
+
+2. Grid Layout@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  그리드 시스템을 사용한 레이아웃
+
+[code]
+
+<div class="grid grid-cols-3 gap-4">
+  <div class="bg-red-500 h-20"></div>
+  <div class="bg-green-500 h-20"></div>
+  <div class="bg-blue-500 h-20"></div>
+</div>
+
+[/code]
+
+    *grid: 그리드 레이아웃 사용
+    *grid-cols-3: 세 개의 열로 분할
+    *gap-4: 그리드 아이템 간의 간격 설정
+
+3. Responsive Design@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+   Tailwind는 반응형 디자인을 쉽게 만들어 준다.
+
+[code]
+
+<div class="bg-blue-500 p-4 md:p-8 lg:p-16">
+  Responsive Padding
+</div>
+
+[/code]
+
+    *p-4: 모든 화면에서 기본 패딩 설정
+    *md:p-8: 중간 크기 이상의 화면에서 패딩 8 적용
+    *lg:p-16: 큰 화면에서 패딩 16 적용
+
+4. Shadow and Rounded Corners@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+   그림자와 둥근 모서리를 쉽게 적용할 수 있다.
+
+[code]
+
+<div class="bg-white p-6 rounded-lg shadow-xl">
+  Box with Shadow and Rounded Corners
+</div>
+
+[/code]
+
+  *rounded-lg: 둥근 모서리
+  *shadow-xl: 큰 그림자 적용
+
+5. Hover Effects@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+   마우스를 올렸을 때의 스타일도 쉽게 설정할 수 있다.
+
+[code]
+
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+  Hover Me
+</button>
+
+[/code]
+
+   *hover:bg-blue-700: 마우스를 올렸을 때 배경색 변경
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
