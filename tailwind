@@ -17,9 +17,9 @@ npx tailwindcss init
 
 [code]
 
-const autoprefixer = require(‘autoprefixer’)
+const autoprefixer = require('autoprefixer')
 
-const tailwindcss = require(‘tailwindcss’)
+const tailwindcss = require('tailwindcss')
 
 module.exports = {
 
@@ -57,7 +57,7 @@ module.exports = {
 
 [code]
 
-import ‘./assets/scss/tailwind.init.scss’
+import './assets/scss/tailwind.init.scss'
 
 [/code]
 
