@@ -35,21 +35,9 @@ assets/css/tailwindcss.css
 
 [code]
 
-module.exports = {
-  content: [
-    // 'purge'를 'content'로 변경
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-  ],
-  darkMode: "class", // 필요에 따라 'false', 'media', 'class' 중 선택 가능
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-};
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 [/code]
 
