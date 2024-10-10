@@ -1,5 +1,8 @@
 #tailwind를 vue2에서 호환성 문제 없이 구축하는 명령어
 
+#이미 8버전이 설치되어 있는 경우 먼저 삭제
+npm uninstall tailwindcss postcss autoprefixer
+
 #postcss8 이 지원되지 않기때문에 7 호환으로 설치
 npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
 
