@@ -264,6 +264,17 @@ underline: 밑줄을 추가
    *hover:bg-blue-700: 마우스를 올렸을 때 배경색 변경
 
 
+#다양한 텍스트 크기 클래스 예시
+
+text-xs: 매우 작은 텍스트
+text-sm: 작은 텍스트
+text-base: 기본 텍스트 크기 (보통 1rem)
+text-lg: 큰 텍스트
+text-xl: 매우 큰 텍스트
+text-2xl: 두 배 크기의 텍스트
+text-3xl: 세 배 크기의 텍스트
+text-4xl: 네 배 크기의 텍스트
+text-5xl: 다섯 배 크기의 텍스트
 
 
 
