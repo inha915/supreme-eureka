@@ -266,17 +266,27 @@ underline: 밑줄을 추가
 
 #다양한 텍스트 크기 클래스 예시
 
-text-xs: 매우 작은 텍스트
-text-sm: 작은 텍스트
-text-base: 기본 텍스트 크기 (보통 1rem)
-text-lg: 큰 텍스트
-text-xl: 매우 큰 텍스트
-text-2xl: 두 배 크기의 텍스트
-text-3xl: 세 배 크기의 텍스트
-text-4xl: 네 배 크기의 텍스트
-text-5xl: 다섯 배 크기의 텍스트
+*text-xs: 매우 작은 텍스트
+*text-sm: 작은 텍스트
+*text-base: 기본 텍스트 크기 (보통 1rem)
+*text-lg: 큰 텍스트
+*text-xl: 매우 큰 텍스트
+*text-2xl: 두 배 크기의 텍스트
+*text-3xl: 세 배 크기의 텍스트
+*text-4xl: 네 배 크기의 텍스트
+*text-5xl: 다섯 배 크기의 텍스트
+
+#폰트 두께(bold)
+Tailwind CSS에서 텍스트를 굵게(bold) 표시하려면 font-bold 클래스를 추가하면 됩니다. 예를 들어 user 텍스트에 굵게 스타일을 적용하려면 다음과 같이 작성할 수 있다.
+ex) <span class="text-gray-300 dark:text-white text-lg font-bold">user</span>
 
 
+*font-bold: 텍스트를 굵게 만든다.
+*font-normal: 기본 폰트 두께
+*font-medium: 중간 두께
+*font-semibold: 준굵게
+*font-light: 얇게
+*font-extrabold: 매우 굵게
 
 
 
